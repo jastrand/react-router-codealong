@@ -1,19 +1,21 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { AlbumList } from 'pages/AlbumList'
-import { ArtistDetail } from 'pages/ArtistDetail'
+import { DrinkList } from './pages/DrinkList'
+import { DrinkDetails } from './pages/DrinkDetails'
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact>
-          <AlbumList />
-        </Route>
-        <Route path="/artists/:artistId">
-          <ArtistDetail />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <DrinkList />
+          </Route>
+          <Route path="/drinks/:idDrink" exact>
+            <DrinkDetails />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
   )
 }
